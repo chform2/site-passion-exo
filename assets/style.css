@@ -1,0 +1,351 @@
+/*
+  _____  ______ ______ _____ _   _ _____ _______ _____ ____  _   _  _____ 
+ |  __ \|  ____|  ____|_   _| \ | |_   _|__   __|_   _/ __ \| \ | |/ ____|
+ | |  | | |__  | |__    | | |  \| | | |    | |    | || |  | |  \| | (___  
+ | |  | |  __| |  __|   | | | . ` | | |    | |    | || |  | | . ` |\___ \ 
+ | |__| | |____| |     _| |_| |\  |_| |_   | |   _| || |__| | |\  |____) |
+ |_____/|______|_|    |_____|_| \_|_____|  |_|  |_____\____/|_| \_|_____/ 
+                                                                          
+                                                                          
+*/
+@font-face{
+    font-family:ProzaRegular;
+    src:url(font/ProzaLibre-Regular.ttf);
+    font-display:swap}
+body{
+    --police:ProzaRegular;
+    --police-color:#404040;
+    --color-primary:rgb(11, 171, 211);
+    --color-primary2:rgb(9, 154, 190);
+    --bg-color:#f3f3f3;
+    --contrast:#fff;
+    --contrast-reverse:#2e2e2e;
+    --bg-contact:#ededed;
+    --text-muted:gray;
+    --bg-nav:rgb(37, 37, 37);
+    --navlinks: #fff;
+}
+
+body.dark{
+    --police-color:#fff !important;
+    --bg-color: #414141 !important;
+    --contrast:#2e2e2e !important;
+    --contrast-reverse:#fff !important;
+    --bg-contact:#303030 !important;
+    --text-muted:silver;
+}
+
+/*
+   _____ _                _____ _____ ______  _____ 
+  / ____| |        /\    / ____/ ____|  ____|/ ____|
+ | |    | |       /  \  | (___| (___ | |__  | (___  
+ | |    | |      / /\ \  \___ \\___ \|  __|  \___ \ 
+ | |____| |____ / ____ \ ____) |___) | |____ ____) |
+  \_____|______/_/    \_\_____/_____/|______|_____/ 
+                                                    
+                                                    
+*/
+.w100{
+    width:100%;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.text-muted{
+    color:var(--text-muted);
+}
+/*
+   _____ ______ _   _ ______ _____            _      
+  / ____|  ____| \ | |  ____|  __ \     /\   | |     
+ | |  __| |__  |  \| | |__  | |__) |   /  \  | |     
+ | | |_ |  __| | . ` |  __| |  _  /   / /\ \ | |     
+ | |__| | |____| |\  | |____| | \ \  / ____ \| |____ 
+  \_____|______|_| \_|______|_|  \_\/_/    \_\______|
+                                                     
+                                                     
+*/
+*, body, html{
+    margin:0px;
+}
+html{
+    scroll-behavior:smooth;
+}
+a, a:hover, a:visited{
+    color:var(--police-color);
+}
+body{
+    font-family:var(--police);
+    background-color:var(--bg-color);
+    color:var(--police-color);
+    transition: all 500ms ease-in-out;
+}
+nav{
+    z-index:99;
+    position:relative;
+    top:0px;
+    left:0px;
+    padding:10px;
+    background-color: var(--bg-nav);
+    right:0px;
+    transition: all 500ms ease-in-out;
+    border-bottom:8px solid var(--color-primary);
+}
+nav a.navbar-brand{
+    border: none !important;
+    margin-right:25px;
+}
+nav a, nav a:hover, nav a:visited{
+    color:var(--navlinks);
+    text-decoration: none;
+    border-bottom:1px dotted var(--police-color);
+}
+div.darkMod{
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    vertical-align: middle;
+    text-align: right;
+    background-color: rgba(200,200,200,0.7);
+    backdrop-filter: blur(75%);
+    padding:9px;
+    border-radius:35%;
+}
+header{
+    z-index:0;
+    color:#fff;
+    padding:20px 5px 20px 5px;
+
+    /* The image used */
+    background-image: url("./images/cover.webp");
+  
+    /* Set a specific height */
+    min-height: 100vh; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header .content{
+    position:relative;
+    top:0px;
+    left:0px;
+    right:0px;
+    background-color: rgba(19, 10, 10, 0.5);
+    text-align: center;
+    padding:15px;
+
+}
+
+.input-color-container {
+    position:fixed;
+    top:4px;
+    right:4px;
+    z-index:1000;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    border: solid 2px #ddd;
+    border-radius: 40px;
+}
+
+.input-color {
+    position: absolute;
+    right: -8px;
+    top: -20px;
+    width: 64px;
+    height: 64px;
+    border: none;
+}
+
+.input-color-label {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #3498db;
+}
+aside{
+    z-index:0;
+    padding:10px;
+}
+form.contact{
+    background: var(--bg-contact);
+    padding: 15px;
+}
+input, textarea{
+    outline:none;
+    border:1px solid silver;
+    font-family:var(--police);
+    background-color:#d5d5d5;  
+    padding:5px; 
+    border-radius:3px;
+    -o-border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    margin-top:5px;
+}
+input:not([type=submit]):active, textarea:active, input:not([type=submit]):focus, textarea:focus{
+    background-color:#fff;
+}
+textarea{
+    resize:none;
+}
+input[type="submit"]{
+    color:#fff;
+    background-color:var(--color-primary);
+    cursor:pointer;
+    transition: background-color 300ms ease-in-out;
+}
+input[type="submit"]:hover{
+    background-color:var(--color-primary2);
+}
+/*
+  __  __          _____ _   _ 
+ |  \/  |   /\   |_   _| \ | |
+ | \  / |  /  \    | | |  \| |
+ | |\/| | / /\ \   | | | . ` |
+ | |  | |/ ____ \ _| |_| |\  |
+ |_|  |_/_/    \_\_____|_| \_|
+                                                      
+*/
+div.labelList{
+    padding: 15px 0px 15px 0px;
+}
+div.label{
+    display:block;
+    padding:15px;
+    background-color: var(--bg-color);
+    cursor:pointer;
+    transition: background-color 500ms ease-in-out;
+    border-radius:3px;
+    -o-border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+div.label:hover{
+    background-color: var(--contrast);
+}
+div.label img, div.label div{
+    display:inline-block;
+    vertical-align: top;
+}
+div.label p+p{
+    margin:0px;
+    padding:0px;
+    line-height:12px !important;
+}
+div.label img{
+    width:100px;
+    max-height:200px;
+    border-radius:3px;
+    -o-border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+/*
+  _____          _____  _  __    ____ _______ _   _ 
+ |  __ \   /\   |  __ \| |/ /   |  _ \__   __| \ | |
+ | |  | | /  \  | |__) | ' /    | |_) | | |  |  \| |
+ | |  | |/ /\ \ |  _  /|  <     |  _ <  | |  | . ` |
+ | |__| / ____ \| | \ \| . \    | |_) | | |  | |\  |
+ |_____/_/    \_\_|  \_\_|\_\   |____/  |_|  |_| \_|
+                                                                                                  
+*/
+.fa-sun{
+    padding-right:3px;
+    color:yellow;
+}
+.fa-moon{
+    padding-left:3px;
+    color:var(--contrast-reverse);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    top:2px;
+    width: 30px;
+    height: 16px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(155, 155, 155);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/*
+  _    _          _____ _  __ _____ 
+ | |  | |   /\   / ____| |/ // ____|
+ | |__| |  /  \ | |    | ' /| (___  
+ |  __  | / /\ \| |    |  <  \___ \ 
+ | |  | |/ ____ \ |____| . \ ____) |
+ |_|  |_/_/    \_\_____|_|\_\_____/ 
+                                    
+                                    
+*/
+::-webkit-scrollbar{
+    margin:0;
+    height:6px;
+    width:6px;
+    background:#d4d4d4;
+}
+::-webkit-scrollbar-thumb{
+    background:grey;
+    -webkit-border-radius:1ex;
+    -webkit-box-shadow:0 1px 2px rgba(0,0,0,.75);
+}
+::-webkit-scrollbar-corner{
+    background:#000;
+}
